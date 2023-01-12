@@ -56,9 +56,9 @@ const sumaCarrito = () => {
 }
 
 const renderBotonCarrito = () => {
-    let salida1 = `<button type="button" class="btn btn-warning position-relative">
-	<img src="./images/basket1.svg" alt="Carrito" width="24">
+	let salida2 = `<button type="button" class="btn btn-warning position-relative">
+	<img src="../../images/basket2.svg" alt="Carrito" width="24">
 		<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${totalCarrito()}</span>
     </button>`;
-    document.getElementById("boton_carrito1").innerHTML = salida1;
+    document.getElementById("boton_carrito2").innerHTML = salida2;
 }

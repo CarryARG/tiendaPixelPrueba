@@ -56,9 +56,51 @@ const sumaCarrito = () => {
 }
 
 const renderBotonCarrito = () => {
-    let salida1 = `<button type="button" class="btn btn-warning position-relative">
-	<img src="./images/basket1.svg" alt="Carrito" width="24">
-		<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${totalCarrito()}</span>
+    let salida1 = `<button class="btn btn-warning position-relative" style="transform: translate(0px,6px); width:36px; height:36px;">
+	<img src="./images/basket1.svg" alt="Carrito" style="transform: translate(-6px,-5px); width:22px; height:22px;">
+		<span class="position-absolute top-0 start-100 badge rounded-pill bg-danger" style="font-size:110%; transform:translate(-21px,-18px);">${totalCarrito()}</span>
     </button>`;
     document.getElementById("boton_carrito1").innerHTML = salida1;
+}
+
+const agregarItemProducto = (id) => {
+    const productos_carrito = cargarProductosCarrito();
+    let pos = productos_carrito.findIndex(item => item.id === id);
+    productos_carrito[pos].cantidad += 1;
+    guardarProductosCarrito(productos_carrito);
+    renderProductosCarrito();
+    renderBotonCarrito();
+}
+
+const eliminarItemProducto = (id) => {
+    const productos_carrito = cargarProductosCarrito();
+    let pos = productos_carrito.findIndex(item => item.id === id);
+    productos_carrito[pos].cantidad -= 1;
+    if (productos_carrito[pos].cantidad == 0) {
+        eliminarProducto(id);
+    }else{
+        guardarProductosCarrito(productos_carrito);
+        renderProductosCarrito();
+        renderBotonCarrito();
+    }
+}
+
+const buscarProducto = (id) => {
+    const productos = cargarProductosLS();
+    return productos.find(item => item.id === id);
+}
+
+const guardarProducto = (id) => {
+    const producto = buscarProducto(id);
+    localStorage.setItem("producto", JSON.stringify(producto));
+}
+
+const cargarProducto = () => {
+    return JSON.parse(localStorage.getItem("producto"))
+}
+
+const verProducto = (id) => {
+    const producto = buscarProducto(id);
+    localStorage.setItem("producto", JSON.stringify(producto));
+    location.href = "ver_producto.html";
 }

@@ -5,94 +5,104 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/estilos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Tienda Pixel</title>
 </head>
-<body class="cielo">
-	<header class="container py-3">
-		<div class="row">
-			<div class="col-md-6">
-				<nav class="navbar navbar-expand-lg navbar-light">
-					<div class="container-fluid">
-					  <a class="navbar-brand" href="index.html"><img src="./images/cofre.png" alt="cofre" width="80"></a>
-					  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					  </button>
-					  <div class="collapse navbar-collapse" id="navbarNav">
-						<ul class="navbar-nav">
-						  <li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">Productos</a>
-						  </li>
-						  <li class="nav-item">
-							<a class="nav-link" href="#">Locales</a>
-						  </li>
-						  <li class="nav-item">
-							<a class="nav-link" href="#">En Familia</a>
-						  </li>
-						  <li class="nav-item">
-							<a class="nav-link" href="#">Nosotros</a>
-						  </li>
-						</ul>
-					  </div>
-					</div>
-				</nav>
-			</div>
-			<div class="col-md-6 d-flex align-items-center justify-content-end">
-				<a href="./paginas/carrito/carrito.html" id="boton_carrito1" title="Ver Carrito"></a>
-			</div>
-		</div>
-	</header>
-	<main class="container py-3">
-		<h1 id="titulo_encabezado" class="text-center display-6">Productos</h1>
-		<div id="productos" class="row"></div>
-	</main>
-	<footer class="container py-3">
-	  <hr>
-	  <div class="row">
-		<div class="col-md-8 d-flex align-items-center">
-		  <ul class="nav">
-			<li class="nav-item">
-			  <a class="nav-link text-secondary" href="#">Política de Privacidad</a>
-			</li>
-			<li class="nav-item">
-			  <a class="nav-link text-secondary" href="#">Defensa del Consumidor</a>
-			</li>
-			<li class="nav-item">
-			  <a class="nav-link text-secondary" href="#">Protección de datos personales</a>
-			</li>
-			<li class="nav-item">
-			  <a class="nav-link text-secondary" href="#">Contacto</a>
-			</li>
-		  </ul>
-		</div>
-		<div class="col-md-4 d-flex align-items-center justify-content-end">
-			<span class="text-secondary"><img src="images/cofre.png" width="32" alt="Logo">Tienda Pixel 2022</span>
-	  </div>
-	<div class="cielo">
-		<div class="stars">
-			<span class="s"></span>
-			<span class="s"></span>
-			<span class="s"></span>
-			<span class="s"></span>
-			<span class="s"></span>
-			<span class="m"></span>
-			<span class="m"></span>
-			<span class="m"></span>
-			<span class="m"></span>
-			<span class="m"></span>
-			<span class="l"></span>
-			<span class="l"></span>
-			<span class="l"></span>
-			<span class="l"></span>
-			<span class="l"></span>
-		</div>
-	</div>
-  <p>Tienda Pixel 2022</p>
-</div>
-	</footer>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-	<script src="js/productos.js"></script>
-	<script src="js/carrito.js"></script>
-	<script src="js/main.js"></script>
+<body>
+    <header class="container-fluid pe-0 ps-0">
+      <nav class="navbar navbar-expand-fluid navbar-light d-flex justify-content-evenly">
+        <div class="pe-0 ps-0 d-flex">
+          <a class="navbar-brand" href="index.html"><img src="./images/cofre.png" alt="cofre" style="transform: translate(-12px,-6px); width: 54px;"></a>
+          <form class="d-flex barra_buscar">
+            <input id="formulario" style="transform: translate(0px,6px);" class="form-control me-2 busqueda" type="text" placeholder="Buscar" aria-label="Search">
+            <button id="botonFormulario" style="transform: translate(0px,5px); width: 34px; height: 35px;" class="btn bg-warning"><iconify-icon icon="ph:magnifying-glass" style="transform: translate(-3px,3px); width: 34px; height: 35px;"></iconify-icon></button>
+          </form>
+          <div class="d-flex pt-2 ps-2">
+            <a id="botonaso" title="Ver Menu"></a>
+          </div>
+          <div class="d-flex pt-2 ps-2">
+            <a href="./paginas/carrito/carrito.html" id="boton_carrito1" title="Ver Carrito"></a>
+          </div>
+        </div>
+        <div class="fs-3 border border-1 border-secondary collapse navbar-collapse flex-column" id="navbarNav" style="z-index: 20; position:relative; background-color:#ffc518;">
+          <ul class="navbar-nav">
+            <li class="text-center nav-item border-bottom border-secondary">
+                <a class="nav-link active" aria-current="page" href="ver_producto.html">PRODUCTOS</a>
+            </li>
+            <li class="text-center nav-item border-bottom border-secondary">
+                <a class="nav-link active" aria-current="page" href="./paginas/carrito/error.html">LOCALES</a>
+            </li>
+            <li class="text-center nav-item">
+                <a class="nav-link active" aria-current="page" href="./paginas/carrito/error.html">NOSOTROS</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="container py-3">
+      <h1>Resultados</h1>
+      <ul id="resultado">
+      </ul>
+      <div class="d-flex container-fluid flex-row justify-content-center">
+        <h1 id="titulo_encabezado" class="text-center display-6 fw-bold">PRODUCTOS</h1>
+      </div>
+      <div id="productos" class="row"></div>
+    </main>
+    <footer class="container py-3">
+      <hr>
+      <div class="row">
+        <div class="col-md-8 d-flex align-items-center">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link text-secondary" href="./paginas/error.html">POLITICA DE PRIVACIDAD</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-secondary" href="./paginas/error.html">DEFENSA DEL JUGADOR</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-secondary" href="./paginas/error.html">CONTACTO</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 d-flex align-items-center justify-content-end">
+            <span class="text-secondary"><img src="images/cofre.png" width="32" alt="Logo">TIENDA PIXEL 2022</span>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="js/productos.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/mainProducto.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+    <!-- Aca voy a hacer la proxima un buscador completo de items, sumare mas items y que solo el index muestre los principales, etc... -->
+    <!--<script>
+      const formulario = document.querySelector('#formulario');
+      const boton = document.querySelector('#botonFormulario');
+      const resultado = document.querySelector('#resultado');
+      const filtrar = (productos) => {
+          resultado.innerHTML = '';
+          const texto = formulario.value.toLowerCase();
+          for (let productoBusqueda of productos){
+              let nombre = productoBusqueda.nombre.toLowerCase();
+              if (nombre.indexOf(texto) !== -1){
+                  resultado.innerHTML += `
+                  <li>${productoBusqueda.nombre} - ${productoBusqueda.imagen}</li>
+                  `
+              }
+              if (resultado.innerHTML === ''){
+                  resultado.innerHTML += `
+                  <li>Producto no encontrado...</li>
+                  `
+              }
+          }
+          boton.addEventListener('click', filtrar)
+          formulario.addEventListener('keyup', filtrar)
+          filtrar();
+}
+    </script>-->
 </body>
 </html>

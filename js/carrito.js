@@ -1,3 +1,6 @@
+//el hecho que tenga este "javascript" muy parecido al otro es por la posicion que se usan las paginas ademas del index...
+//por eso opte por hacer dos parecidos que funcionen con sus respectivas paginas en sus respectivos lugares
+
 const guardarProductosCarrito = (productos) => {
     localStorage.setItem("carrito", JSON.stringify(productos));
 }

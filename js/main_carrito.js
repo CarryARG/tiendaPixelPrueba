@@ -8,6 +8,7 @@ const renderbotonMenu = () => {
 
 renderbotonMenu();
 
+//aca se revisa todos los productos que seleccionamos + si queremos editar algo de nuestra seleccion + si queremos continuar con nuestra compra
 const renderProductosCarrito = () => {
     const productos_carrito = cargarProductosCarrito();
 	let salida2 = "";
@@ -17,7 +18,7 @@ const renderProductosCarrito = () => {
 		salida2 = `<table class="table">
         <tbody>
         <tr>
-        <td colspan="6" class="text-end"><a href="#" class="btn btn-warning" onClick="vaciarCarrito()">Vaciar Carrito <img src="../../images/trash3.svg" alt="Vaciar Carrito" width="16" /></a></td>
+        <td colspan="6" class="text-end"><a class="btn btn-warning" onClick="preguntarVaciarCarrito()">Vaciar Carrito <img src="../../images/trash3.svg" alt="Vaciar Carrito" width="16" /></a></td>
         </tr>`;
 
         for (let producto of productos_carrito) {
@@ -41,7 +42,7 @@ const renderProductosCarrito = () => {
         salida3 += `<table class="table">
         <tbody>
         <tr>
-        <td colspan="6" class="text-center border-0"><a href="../../paginas/carrito/error.html" class="btn btn-warning fs-2"> Continuar Compra <alt="Continuar Compra" width="48" /></a></td>
+        <td colspan="6" class="text-center border-0"><a href="../../paginas/carrito/compra.html" class="btn btn-warning fs-2"> Continuar Compra <alt="Continuar Compra" width="48" /></a></td>
         </tr>`;
 
     } else {

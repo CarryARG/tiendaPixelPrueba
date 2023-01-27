@@ -1,3 +1,5 @@
+//debo decir que me inspire mucho en una de las clases haciendo una pagina similar a mcdonnalds como ejemplo xd
+
 const productos = [
     {id:1, nombre:"Slime Verde", descripcion:"Slime comun que te puedes encontrar en cualquier parte del mundo.", precio:200, imagen:"slime_verde.png", categoria:"slimes"},
     {id:2, nombre:"Slime Rojo", descripcion:"Un tipo variado de slime que solo se puede encontrar en lugares con altas temperaturas climaticas.", precio:500, imagen:"slime_rojo.png", categoria:"slimes"},

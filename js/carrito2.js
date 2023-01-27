@@ -1,3 +1,6 @@
+//el hecho que tenga este "javascript" muy parecido al otro es por la posicion que se usan las paginas ademas del index...
+//por eso opte por hacer dos parecidos que funcionen con sus respectivas paginas en sus respectivos lugares
+
 const guardarProductosCarrito = (productos) => {
     localStorage.setItem("carrito", JSON.stringify(productos));
 }
@@ -103,4 +106,24 @@ const verProducto = (id) => {
     const producto = buscarProducto(id);
     localStorage.setItem("producto", JSON.stringify(producto));
     location.href = "../../ver_producto.html";
+}
+
+function preguntarVaciarCarrito() {
+    Swal.fire({
+        title: '¿Estas seguro?',
+        text: "No puedes revertir despues de esto",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si',
+        cancelButtonText: 'No'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            vaciarCarrito();
+          Swal.fire(
+            '¡Productos eliminados!'
+          )
+        }
+      })
 }

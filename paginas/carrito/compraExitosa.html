@@ -9,9 +9,11 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <title>Error!</title>
+        <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css" rel="stylesheet"></link>
+        <title>Compra Exitosa</title>
     </head>
-    <body class="container-fluid p-0">
+    <!--se viene un lindo javascript inline <3 -->
+    <body class="container-fluid p-0" onload="ticketFinal();">
     <!--encabezado-->
     <header class="container-fluid pe-0 ps-0">
         <nav class="navbar navbar-expand-fluid navbar-light d-flex justify-content-evenly">
@@ -46,10 +48,43 @@
       </header>
         <!--fondo de inicio-->
         <main class="container py-3">
-            <h1 id="titulo_encabezado" class="text-center display-6">¡ERROR! 404</h1>
+            <h1 id="titulo_encabezado" class="text-center display-6">¡GRACIAS POR SU COMPRA!</h1>
         </main>
         <article>
-            <iconify-icon icon="bxs:error" width="200" height="200" class="container-fluid d-flex flex-column align-items-center justify-content-center"></iconify-icon>
+          <!--a partir de aca, quise aplicar algo de javascript inline, solo por practica-->  
+          <div id="numeroCompra"></div>
+            <script>
+              let numeroNota = Math.round(Math.random() * 10000);
+              const numeroMostrar = {
+                  numeroNota:numeroNota++
+              }
+    
+              const ticketFinal = () => {
+                  let numeroCompra = document.getElementById("numeroCompra");
+                  let mensaje3 =  `<div class="alert alert-success" role="alert">
+                  <p><b>Su orden se ha cargado completamente en nuestra base de datos. En los proximos 7 dias estara llegando el pedido a su centro de entregas local.</b></p>
+                  <p>Su Numero de Compra es: <b>${numeroMostrar.numeroNota}</b></p>
+                  <p>Recuerde presentarse con su DNI y con su Numero de Compra al retirar su pedido.</p>
+                  </div><br>`
+                  numeroCompra.innerHTML = mensaje3;
+                  //notificacion gloriosa
+                  Swal.fire({
+                    title: '¡COMPRA EXITOSA!',
+                    text: '¡Tu compra ha sido realizda con Exito!',
+                    imageUrl: 'https://picsum.photos/id/660/367/267',
+                    imageWidth: 400,
+                    imageHeight: 300,
+                    imageAlt: 'Custom image',
+                    showConfirmButton: false,
+                    timer: 3000
+                  })
+                  //una vez terminado todo el chiche, se borran todos los productos seleccionados del carrito
+                vaciarCarrito();
+              }
+            </script>
+            <div class="text-center container">
+              <a href="../../index.html" class="text-center container "><button type="button" id="volverInicio" class="btn btn-primary fs-4 text-center">Volver a Inicio</button></a>
+            </div>
         </article>
         <footer class="container py-3">
           <hr>
@@ -76,6 +111,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="../../js/productos.js"></script>
         <script src="../../js/carrito2.js"></script>
-        <script src="../../js/error.js"></script>
+        <script src="../../js/main_carrito.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
     </body>
 </html>
